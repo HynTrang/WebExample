@@ -1,0 +1,29 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 100px;
+}
+h1 {
+    margin: auto;
+    border-right: 3px solid;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typerwriter 2s steps(17) 1s 1 normal both,
+               blinktextcursor 500ms steps(17) infinite normal; /*step*/
+}
+@keyframes typerwriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 271px;
+    }
+}
+@keyframes blinktextcursor {
+    from {
+        border-right-color: #000;
+    }
+    to {
+        border-right-color: transparent;
+    }
+}
