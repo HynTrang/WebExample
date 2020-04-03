@@ -1,22 +1,129 @@
 body {
-    font-family: sans-serif;
-    text-align: center;
-    padding-top: 100px;
+    font-family: 'Alfa Slab One', cursive;
+    background: aliceblue;
+    overflow-x: hidden;
 }
+/*Cloud*/
+.wrapper {
+    position: relative;
+    height: 200px;
+}
+.cloud {
+    position: absolute;
+}
+.cloud01 {
+    top: 0;
+    left: 0;
+    animation: cloud 100s linear 0s infinite both;
+}
+.cloud02 {
+    top: 90px;
+    left: 0;
+    animation: cloud 100s linear 30s infinite both;
+}
+.cloud03 {
+    top: 90px;
+    left: 0;
+    animation: cloud 100s linear 75s infinite both;
+}
+.cloud04 {
+    top: 0;
+    left: 0;
+    animation: cloud 100s linear 50s infinite both;
+}
+/*Title*/
 h1 {
+    width: 136px;
     margin: auto;
-    border-right: 3px solid;
     white-space: nowrap;
     overflow: hidden;
-    animation: typerwriter 2s steps(17) 1s 1 normal both,
-               blinktextcursor 500ms steps(17) infinite normal; /*step*/
+    border-right: 3px solid;
+    animation: typerwriter 1s steps(8) 0s 1 normal both,
+               blinktextcursor 500ms steps(8) infinite normal; /*step*/
+    animation-play-state: paused;
 }
-@keyframes typerwriter {
+h1:hover {
+    animation-play-state: running;
+}
+/*Ball*/
+p {
+    text-align: center;
+}
+.ball {
+    text-align: center;
+    animation: move-left-right 2s ease-in 1s both;
+    animation-play-state: paused;
+}
+.ball:hover {
+    animation-play-state: running;
+}
+/*FlipUp*/
+.wrapper2 {
+    font-size: 96px;
+    text-align: center;
+    perspective: 800px;
+}
+.wrapper2 span {
+    margin-left: -20px;
+    display: inline-block; /**/
+    transform-origin: 50% 70%;
+}
+.wrapper2 span:nth-child(1) {
+    margin-left: 0;
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) .2 both,
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2s forwards;
+}
+.wrapper2 span:nth-child(2) {
+    margin-right: 30px;
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) .2s both,
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2.2s forwards;
+}
+.wrapper2 span:nth-child(3) {
+    margin-right: 30px;
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) .4s both,
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2.4s forwards;
+}
+.wrapper2 span:nth-child(4) {
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) .6s both,
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2.6s forwards;
+}
+.wrapper2 span:nth-child(5) {
+    margin-left: -27px;
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) .8s both,
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2.8s forwards;
+}
+.wrapper2 span:nth-child(6) {
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 1s both,
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 3s forwards;
+}
+.wrapper2 span:nth-child(7) {
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 1.2s both,
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 3.2s forwards;
+}
+
+.wrapper3 {
+    width: 500px;
+    height: 500px;
+    background: transparent url(../images/walker_frames.png) 0 0 no-repeat;
+    margin: 3em auto;
+    animation: walker 2s steps(10) infinite;
+}
+
+@keyframes cloud {
     from {
-        width: 0;
+        transform: translateX(-120px);
     }
     to {
-        width: 274px;
+        transform: translateX(1400px);
+    }
+}
+
+@keyframes typerwriter {
+    from {
+        width: 136px;
+    }
+    to {
+        width: 320px;
     }
 }
 @keyframes blinktextcursor {
@@ -25,5 +132,33 @@ h1 {
     }
     to {
         border-right-color: transparent;
+    }
+}
+
+@keyframes move-left-right {
+    0% {transform: translateX(0) rotate(0turn);}
+    20% {transform: translateX(-100px) rotate(-0.5turn);}
+    100% {transform: translateX(450px) rotate(2turn);}
+}
+
+@keyframes flipUp {
+    from {
+        transform: rotateX(90deg);
+    }
+    to {
+        transform: rotateX(0deg);
+    }
+}
+@keyframes flipDown {
+    to {
+        transform: rotateX(-180deg);
+    }
+}
+@keyframes walker {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 -5000px;
     }
 }
