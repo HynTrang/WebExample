@@ -70,35 +70,42 @@ p {
 }
 .wrapper2 span:nth-child(1) {
     margin-left: 0;
-    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) .2 both,
-               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2s forwards;
+    animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) both,
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2s forwards,
+               swing 4s cubic-bezier(0.45, 0.03, 0.51, 0.95) 4.1s forwards;
 }
 .wrapper2 span:nth-child(2) {
     margin-right: 30px;
     animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) .2s both,
-               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2.2s forwards;
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2.2s forwards,
+               swing 4s cubic-bezier(0.45, 0.03, 0.51, 0.95) 3.8s forwards;
 }
 .wrapper2 span:nth-child(3) {
     margin-right: 30px;
     animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) .4s both,
-               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2.4s forwards;
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2.4s forwards,
+               swing 4s cubic-bezier(0.45, 0.03, 0.51, 0.95) 4.4s forwards;
 }
 .wrapper2 span:nth-child(4) {
     animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) .6s both,
-               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2.6s forwards;
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2.6s forwards,
+               swing 4s cubic-bezier(0.45, 0.03, 0.51, 0.95) 4.8s forwards;
 }
 .wrapper2 span:nth-child(5) {
     margin-left: -27px;
     animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) .8s both,
-               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2.8s forwards;
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 2.8s forwards,
+               swing 4s cubic-bezier(0.45, 0.03, 0.51, 0.95) 4.6s forwards;
 }
 .wrapper2 span:nth-child(6) {
     animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 1s both,
-               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 3s forwards;
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 3s forwards,
+               swing 4s cubic-bezier(0.45, 0.03, 0.51, 0.95) 4.3s forwards;
 }
 .wrapper2 span:nth-child(7) {
     animation: flipUp 1s cubic-bezier(0.68, -0.55, 0.26, 1.55) 1.2s both,
-               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 3.2s forwards;
+               flipDown .5s cubic-bezier(0.45, 0.03, 0.51, 0.95) 3.2s forwards,
+               swing 4s cubic-bezier(0.45, 0.03, 0.51, 0.95) 4.7s forwards;
 }
 
 .wrapper3 {
@@ -107,6 +114,29 @@ p {
     background: transparent url(../images/walker_frames.png) 0 0 no-repeat;
     margin: 3em auto;
     animation: walker 2s steps(10) infinite;
+}
+
+.wrapper4 {
+    font-size: 96px;
+    text-align: center;
+}
+.wrapper4 span {
+    display: inline-block;
+}
+.wrapper4 span:last-child {
+    margin-left: -26px;
+}
+.wrapper4 span:first-child {
+    animation: circle 2s cubic-bezier(0.45, 0.03, 0.51, 0.95) both;
+}
+
+.wrapper5 {
+    width: 30%;
+    margin: 3em auto;
+}
+.wrapper5 #fill {
+    animation: charge 1s cubic-bezier(.17, .67, .54, .99),
+               changeColor 1s ease-out forwards;
 }
 
 @keyframes cloud {
@@ -154,6 +184,14 @@ p {
         transform: rotateX(-180deg);
     }
 }
+@keyframes swing {
+    0% {transform: rotateX(-180deg)}
+    20% {transform: rotateX(-180deg) rotateY(-45deg);}
+    40% {transform: rotateX(-180deg) rotateY(45deg);}
+    60% {transform: rotateX(-180deg) rotateY(-45deg);}
+    80% {transform: rotateX(-180deg) rotateY(45deg);}
+    100% {transform: rotateX(-180deg);}
+}
 @keyframes walker {
     from {
         background-position: 0 0;
@@ -161,4 +199,26 @@ p {
     to {
         background-position: 0 -5000px;
     }
+}
+@keyframes circle {
+    0% {
+        transform: rotateY(0);
+    }
+    30% {
+        transform: rotateY(-45deg);
+    }
+    60% {
+        transform: rotateY(45deg);
+    }
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+@keyframes charge {
+    from {transform: scaleX(0.1);}
+    to{transform: scale(1);}
+}
+@keyframes changeColor {
+    0%, 30% {fill: red;}
+    40%, 100% {fill: #7AC25A;}
 }
