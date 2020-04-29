@@ -111,7 +111,7 @@ p {
 .wrapper3 {
     width: 500px;
     height: 500px;
-    background: transparent url(../images/walker_frames.png) 0 0 no-repeat;
+    background: transparent url(../images/example1/walker_frames.png) 0 0 no-repeat;
     margin: 3em auto;
     animation: walker 2s steps(10) infinite;
 }
