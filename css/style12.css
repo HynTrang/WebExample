@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Pacifico');
+
+
+html {
+    font-size: 18px;
+    color: #5d4107;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../images/example12/burlap_tile.jpg) repeat 0 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+h1  {
+    margin: 1rem 0 1rem 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+    font-style: italic;
+    line-height: 1;
+    color: #ae7e03;
+}
+
+h1 span {
+    display: block;
+    margin-top: 5px; 
+    font-family: 'Pacifico', cursive;
+    font-weight: bold;
+    font-size: 2.5rem;
+    font-style: normal;
+    color: #5d4107;
+}
+
+article {
+    padding: 50px 25px 20px 220px;
+    background-color: #fff;
+    background-color: rgba(255,255,255,.6);
+    position: relative;
+}
+
+footer {
+    padding: 30px 30px 80px 220px;
+    background-color: rgba(67,25,0,.85);
+    color: rgba(255,255,255,.4);
+    font-size: .9rem;
+}
+
+footer a {
+    color: rgba(207,143,39,.9);
+    white-space: nowrap;
+}
+
+.product {
+    width: 50px;
+    height: 50px;
+    /* background-color: #ccc; */
+    perspective: 1000px;
+    perspective-origin: center;
+    transform: scale(0.6);
+    position: absolute;
+    bottom: 125px;
+    left: 30px;
+}
+
+.product .box {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid turquoise; */
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(26deg) translateZ(0px);
+    /* transform: rotateX(-55deg) rotateY(26deg) translateZ(0px); */
+    /* transform: rotateX(-15deg) rotateY(-126deg) translateZ(0px); */
+}
+
+.product .box div {
+    font-size: 4em;
+    position: absolute;
+    /* border: 1px solid tomato; */
+    background: url(../images/example12/box_design.jpg) no-repeat;
+    background-size: 400px 550px;
+}
+
+.product .box .top {
+    width: 200px;
+    height: 200px;
+    transform: rotateX(90deg) translateZ(100px);
+    background-position: -200px 0;
+}
+
+.product .box .front {
+    width: 200px;
+    height: 350px;
+    transform: translateZ(100px);
+    background-position: -200px -200px;
+}
+
+.product .box .left {
+    width: 200px;
+    height: 350px;
+    transform: rotateY(-90deg) translateZ(99px);
+    background-position: 0 -200px;
+}
